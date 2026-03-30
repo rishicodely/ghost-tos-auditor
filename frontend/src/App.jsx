@@ -9,7 +9,10 @@ function App() {
   const handleAnalyze = async () => {
     try {
       setLoading(true);
-      const res = await axios.post("http://localhost:5000/analyze", { url });
+      const res = await axios.post(
+        "https://ghost-tos-auditor.onrender.com/analyze",
+        { url },
+      );
       setResult(res.data);
     } finally {
       setLoading(false);
